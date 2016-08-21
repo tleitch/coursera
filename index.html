@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rate Modeling for Swaptions</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Rate Modeling for Swaptions">
+  <meta name="author" content="Terry Leitch">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Rate Modeling for Swaptions</h1>
+    <h2>Structure and Market Challenges</h2>
+    <p>Terry Leitch<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <article data-timings="">
+    <!-- Limit image width and height -->
+
+<style type='text/css'>
+img {
+    max-height: 560px;
+    max-width: 964px;
+}
+</style>
+
+<!-- Center image on slide -->
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+
+<script type='text/javascript'>
+$(function() {
+    $("p:has(img)").addClass('centered');
+});
+</script>
+
+<h2>What is a Swaption?</h2>
+
+<p>A <strong>Swaption</strong> is an option to enter into a swap at a future time. </p>
+
+<ul>
+<li><p>The underlying swap can be a receive fixed swap (&quot;receiver&quot; swaption) or pay fixed swap (&quot;payers&quot; swaption). A receiver protects against rates declining while a payer protects against rates increasing</p></li>
+<li><p>The option can be exercised according to predefined rules. A European Swaption can be exercised once on a specific date while an American can be exercised at any time. These features are <strong>boundary conditions</strong> for the option. The most common swaption is a European exercise. </p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Original European Valuation</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Using Black Futures Model</h3>
+
+<ol>
+<li>Enter strike as yield strike of swaption</li>
+<li>Future price is implied forward rate for underlying swap</li>
+<li>Enter yield vol and discount rate to option expiration</li>
+<li>For payer swaption, take call value, and for receivers, put value</li>
+<li>Multiply the result by BPV of underlying swap</li>
+</ol>
+
+<p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Strike Level</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3"><img src="assets/fig/unnamed-chunk-3-2.png" alt="plot of chunk unnamed-chunk-3"></p>
+
+<ol>
+<li>Skew is evident in graph of market prices</li>
+<li>To deal with this market uses a SABR model with more parameters to &quot;fit&quot; the vols</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Strike Level</h2>
+  </hgroup>
+  <article data-timings="">
+    <h4>We move from 1-d rate diffusion to 2-d random process where additonally volatility is stochastic</h4>
+
+<p><img src="assets/fig/unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4"></p>
+
+<h4>For each tenor at a given expiration we fit</h4>
+
+<ol>
+<li><strong>alpha</strong>    – vol of vol</li>
+<li><strong>beta</strong>     – order of coefficient in diffusion term </li>
+<li><strong>rho</strong>      - correlation of vol and underlying rate</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='NA'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Original European Valuation'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Strike Level'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Strike Level'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
