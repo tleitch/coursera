@@ -53,7 +53,7 @@ A **Swaption** is an option to enter into a swap at a future time.
 4. For payer swaption, take call value, and for receivers, put value
 5. Multiply the result by BPV of underlying swap
 
-![plot of chunk unnamed-chunk-2](assets/fig/unnamed-chunk-2-1.png)
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png)
 
 --- .class #id 
 
@@ -61,7 +61,7 @@ A **Swaption** is an option to enter into a swap at a future time.
 
 
 ## Strike Level
-![plot of chunk unnamed-chunk-3](assets/fig/unnamed-chunk-3-1.png)![plot of chunk unnamed-chunk-3](assets/fig/unnamed-chunk-3-2.png)
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png)![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-2.png)
 
 1. Skew is evident in graph of market prices
 2. To deal with this market uses a SABR model with more parameters to "fit" the vols
@@ -70,7 +70,7 @@ A **Swaption** is an option to enter into a swap at a future time.
 ## Strike Level
 #### We move from 1-d rate diffusion to 2-d random process where additonally volatility is stochastic
 
-![plot of chunk unnamed-chunk-4](assets/fig/unnamed-chunk-4-1.png)
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
 
 #### For each tenor at a given expiration we fit 
 1. **alpha**    – vol of vol
